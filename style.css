@@ -1,0 +1,227 @@
+@import url("https://use.typekit.net/qkp2saz.css");
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF@15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap');
+body {
+    background-color: thistle;
+    border: 8px solid #222222;
+    border-radius: 16px;
+    font-family: "zeplin-vf", sans-serif;
+    font-variation-settings: "CONX" 1, "CONY" 1;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    min-width: 256px;
+    padding-top: 8px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: #333;
+}
+ /* set up border-box sizing for easier layout calculations */
+html {
+    box-sizing: border-box;
+    background: radial-gradient(circle, skyblue, SkyBlue 50%, LightCyan 50%, SkyBlue);
+    background-size: 8px 8px;
+} 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+nav ul {
+    list-style-type: none;
+    background-color: #b577b5;
+    border: 4px solid #111111;
+    border-radius: 10px;
+    font-family: "honk", sans-serif;
+    font-weight: bold;
+    padding: 16px;
+} 
+nav ul li {
+    display: inline;
+    border-right: 2px solid #111111;
+    padding-right: 8px;
+    padding: 8px;
+}
+nav ul li:last-child {
+    border-right: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #111111;
+}
+nav ul li a:link {
+    color: blue;
+}
+nav ul li a:visited {
+    color: purple;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+nav ul li a:active {
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+}
+
+nav ul li.selected {
+    color: #606060;
+}
+
+/* Ensure images scale responsively and don't overflow their container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* avoids inline whitespace and helps centering */
+}
+
+/* Center images inside paragraphs and give a little spacing */
+p img {
+    margin: 0.5rem auto;
+}
+
+/* size helpers for images used in the site */
+.small {
+    width: 96px; /* explicit smaller size for icons / headshots */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layout for a person/profile: image left, text right, with border and rounded corners */
+.person {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border: 2px solid #6b3f6b; /* visible contrasting border */
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.6);
+    margin: 12px 0;
+}
+.person__image {
+    flex: 0 0 auto;
+}
+.person__content {
+    flex: 1 1 auto;
+}
+
+/* Stack vertically on narrow screens */
+@media (max-width: 520px) {
+    .person {
+        flex-direction: column;
+        text-align: center;
+    }
+    .person__image {
+        margin-bottom: 8px;
+    }
+}
+
+.large {
+    max-width: 100%; /* don't cap very large images */
+    height: auto;
+}
+
+/* Footer styling: dark blue background with light text for contrast */
+footer {
+    background-color: #26374a ; /* almost the same as #8B008B */
+    background-image: url(images/landscape.png);
+    color: #ffffff; /* very light white for readability */
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.3);
+    margin-top: 24px;
+    text-align: center;
+}
+
+/* Make mailto links (and contact links) white to contrast on dark footer */
+a[href^="mailto:"] {
+    color: black; /* white */
+}
+
+/* If the mailto link appears inside a .contact paragraph, ensure it's white and stays readable when visited/hovered */
+.contact a, .contact a:link, .contact a:visited {
+    color: #ffffff;
+}
+.contact a:hover, .contact a:active {
+    text-decoration: underline;
+    color: #ffebff; /* slight tint for hover, still light */
+}
+body {
+    border: 8px solid #222222;
+    border-radius: 16px;
+}
+section, img {
+    border: 2px solid gray;
+    border-radius: 16px;
+}
+header p {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+header h1 {
+    font-size: 16px;
+    text-align: right;
+}
+a[href^="https://"] {
+    color: #333333; /* dark gray */
+}
+
+/* Responsive embed container for iframes (keeps aspect ratio and fits narrow screens) */
+.embed-container {
+    position: relative;
+    width: 100%;
+    /* default 16:9 aspect ratio; adjust with --aspect if needed */
+    padding-top: calc(9 / 16 * 100%);
+    margin: 12px 0;
+    overflow: hidden;
+    /* make sure rounded corners and borders apply to embed box */
+    border-radius: 12px;
+    border: 2px solid rgba(0,0,0,0.12);
+}
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+@media (max-width: 520px) {
+    /* For very narrow screens we might prefer a taller aspect (4:3) for the games */
+    .embed-container[data-aspect="4:3"] {
+        padding-top: calc(3 / 4 * 100%);
+    }
+}
+
+/* Additional safeguards: ensure iframes and embedded content can't force parent overflow */
+iframe, embed, object {
+    display: block; /* avoid inline baseline overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0; /* allow flex children to shrink past their content */
+}
+
+/* Prevent large fixed-width children from pushing layout horizontally */
+* {
+    min-width: 0;
+}
+
+/* Make sure the body container clips any accidental overflow */
+body {
+    overflow-x: hidden;
+}
+h2 {
+    font-family: "zeplin-vf", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
