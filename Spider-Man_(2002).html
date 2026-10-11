@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider-Man (2002) - Stream Now</title>
-    
-    <!-- Load Plyr UI Layer Core -->
-    <link rel="stylesheet" href="https://plyr.io" />
-    
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.0.1/video-neutral.js"></script>
+
     <style>
         :root {
-            --plyr-color-main: #E50914; /* Netflix Red */
-            --plyr-video-control-background-hover: rgba(0, 0, 0, 0.7);
+            --media-accent-color: #E50914;
+            --media-accent-text-color: #ffffff;
         }
-        
+
         body {
             background-color: #141414; /* Netflix Charcoal Black */
             color: #ffffff;
@@ -43,26 +42,33 @@
             background-color: #000;
             width: 100%;
             /* This aspect-ratio rule forces the container box to scale perfectly to your film's exact dimensions */
-            aspect-ratio: 1650 / 892; 
+            aspect-ratio: 1650 / 892;
         }
 
-        /* Force the internal video element to fully fill the container width and height */
+        .video-wrapper video-player {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .video-wrapper video-neutral-skin {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         .video-wrapper video {
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
         }
 
-
-        /* Clean Netflix Subtitle Overlay Configuration */
-        .plyr--captions {
+        .video-wrapper video::cue {
             font-size: 22px !important;
             font-weight: 500;
-            text-shadow: 0px 2px 4px rgba(0, 0, 0, 1) !important;
-        }
-        .plyr__caption {
-            background: transparent !important;
-            color: #ffffff !important;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+            background-color: transparent;
+            color: #ffffff;
         }
 
         /* IMDb Info Dashboard Section */
@@ -132,20 +138,16 @@
 <body>
 
     <div class="netflix-container">
-        <!-- Direct Native Engine Integration Area -->
         <div class="video-wrapper">
-            <!-- 
-              By removing the crossorigin parameter entirely, the browser is forced 
-              to stream the video exactly like it does when you look at it in a separate tab!
-            -->
-            <video id="player" playsinline controls preload="metadata">
-                <source src="https://archive.org/download/spider-man-2002-open-matte-35-mm-1440-p-scan/Spider-Man%20%282002%29%20Open%20Matte%2035Mm%201440P%20Scan.mp4" type="video/mp4">
-                
-                <!-- Target subtitle layout track -->
-                <track kind="subtitles" label="English" srclang="en" src="subtitles.vtt" default>
-                
-                Your browser does not support HTML5 video streaming.
-            </video>
+            <video-player>
+                <video-neutral-skin>
+                    <video id="player" playsinline preload="metadata">
+                        <source src="https://archive.org/download/spider-man-2002-open-matte-35-mm-1440-p-scan/Spider-Man%20%282002%29%20Open%20Matte%2035Mm%201440P%20Scan.mp4" type="video/mp4">
+                        <track kind="subtitles" label="English" srclang="en" src="subtitles.vtt" default>
+                        Your browser does not support HTML5 video streaming.
+                    </video>
+                </video-neutral-skin>
+            </video-player>
         </div>
 
         <!-- Metadata Section Component -->
@@ -170,16 +172,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Script Processing Engine Core -->
-    <script src="https://plyr.io"></script>
-    <script>
-        // We stripped the high level keyboard listener parameters out of Plyr 
-        // to prevent the framework from manually trying to scrape video metadata headers.
-        const player = new Plyr('#player', {
-            controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'captions', 'fullscreen']
-        });
-    </script>
 
 </body>
 </html>
