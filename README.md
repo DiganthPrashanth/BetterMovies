@@ -52,8 +52,7 @@ We welcome contributions from the open-source community! If you'd like to help i
 5. **Open** a Pull Request.
 
 ### Bug Reports & Contact
-If you encounter any issues, broken links, or want to reach out directly, please [open an issue](https://github.com/DiganthPrashanth/BetterMovies/issues) on GitHub or contact the maintainer directly via email:  
-📧 **[diganthprashanth673@gmail.com](mailto:diganthprashanth673@gmail.com)**
+If you encounter any issues, broken links, or want to reach out directly, please [open an issue](https://github.com/DiganthPrashanth/BetterMovies/issues) on GitHub.
 
 ---
 
