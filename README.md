@@ -11,7 +11,7 @@ When your favorite movies (like *Spider-Man*) unexpectedly disappear from major 
 ## 🌟 Features
 
 * **High-Quality Playback:** Focused on providing 1080p quality streams.
-* **Open Matte Formats:** Experience films without the standard cinematic black bars, utilizing the full screen area.
+* **Open Matte Formats:** Experience films with the original 35mm film format from the theatre
 * **Simple, Lightweight Interface:** Built to be fast, responsive, and easy to navigate.
 * **Open-Source:** Fully open-source and community-driven.
 * **NO ADS OR TRACKERS!** Contains no ads or trackers, although you are subject to Google's, Adobe's, and Video.js's privacy policy for fonts and playback
