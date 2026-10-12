@@ -4,7 +4,7 @@
 [![GitHub repo](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/DiganthPrashanth/BetterMovies)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to **BetterMovies** — an open-source media discovery and streaming site where you can watch your favorite movies and shows for free, specializing in **1080p Open Matte Format** releases. 
+Welcome to **BetterMovies** — an open-source media discovery and streaming site where you can watch your favorite movies and shows for free, specializing in **1080p Open Matte Format** and **Blu-Ray/DVD** releases. 
 
 When your favorite movies (like *Spider-Man*) unexpectedly disappear from major streaming platforms like Prime Video, Netflix, or Hulu, BetterMovies acts as your reliable backup to find and enjoy them.
 
