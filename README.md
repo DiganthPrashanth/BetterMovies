@@ -39,7 +39,10 @@ BetterMovies is designed to be a lightweight, static website hosted easily on Gi
 
 **BetterMovies does not host, store, or transmit any movies, TV shows, or other media files on our own infrastructure.** 
 
-This service acts strictly as a directory and discovery platform, helping users find and access content provided through third-party sources. We do not have control over the media content, and any copyright claims or takedown requests should be directed to the respective external hosts.
+This service acts strictly as a directory and discovery platform, helping users find and access content provided through third-party sources. We do not have control over the media content, and any copyright claims or takedown requests should be directed to the respective external hosts:
+**archive.org** and,
+**bt4gprx.com**
+
 
 ## 🤝 Contributing & Support
 
